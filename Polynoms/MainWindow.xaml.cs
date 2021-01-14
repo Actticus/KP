@@ -50,14 +50,19 @@ namespace Polynoms
             throw new NotImplementedException();
         }
 
-        private void DragWindow(object sender, MouseButtonEventArgs e)
+        private void Close(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Close();
         }
 
         private void TurnDown(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            WindowState = WindowState.Minimized;
+        }
+
+        private void DragWindow(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }
