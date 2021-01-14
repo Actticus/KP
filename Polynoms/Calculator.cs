@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**
+ * \file
+ * \brief Файл с описанием класса Calculator
+ * Данный файл содержит в себе структуры и методы класса Calculator
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -6,15 +12,28 @@ using System.Text;
 
 namespace Polynoms
 {
+    /**
+     * \brief Класс, предназначенный для подсчётов
+     *
+	 *  Данный класс имеет различные функции для подсчёта полиномов,
+     *  заранее переданных в виде списка токенов
+     */
     public abstract class Calculator
     {
+        ///Набор возможных кодов ответа
         public enum AnswerCode
         {
-            Ok = 0,  
-            Error = 1,  
-            Warning = 2  
+            Ok = 0, ///< Указывает на то, что пользователь передал верные данные 
+            Error = 1, ///< Указывает на то, что в данных, переданных пользователем, была критическая ошибка
+            Warning = 2 ///< Указывает на то, что в данных, переданных пользователем, была не критическая ошибка
         }
 
+        /**
+         * Заменяет переменные вокруг заданного токена на числа
+         * \param[in] tokens Лист всех токенов
+         * \param[in] index Индекс токена, вокруг которого необходимо заменить переменные на числа
+         * \param[in] value Значение, на которое необходимо заменить переменные
+         */
         private static void ReplaceNear(IList<Tokener.Token> tokens, int index, string value)
         {
             if (tokens[index - 1].Type == Tokener.TokenType.Variable)
@@ -23,6 +42,12 @@ namespace Polynoms
                 tokens[index + 1] = new Tokener.Token { Type = Tokener.TokenType.Number, Value = value };
         }
 
+        /**
+         * Считает значение токенов вокруг заданного токена и заменяет подсчитанные токены на ответ
+         * \param[in] tokens Лист всех токенов
+         * \param[in] index Индекс токена, вокруг которого необходимо произвести подсчёт
+         * \param[in] mathAction Математическая функция, которую необходимо выполнить над токенами
+         */
         private static void Calculate(IList<Tokener.Token> tokens, int index, CalcDelegate mathAction)
         {
             tokens[index] = mathAction(tokens[index - 1], tokens[index + 1]);
@@ -30,6 +55,11 @@ namespace Polynoms
             tokens.RemoveAt(index - 1);
         }
 
+        /**
+         * Складывает два токена и возвращает ответ
+         * \param x,y Складываемые токены
+         * \return Сумму двух токенов, переданных в качестве аргумента
+         */
         private static Tokener.Token Add(Tokener.Token x, Tokener.Token y)
         {
             return new Tokener.Token
@@ -39,6 +69,11 @@ namespace Polynoms
             };
         }
 
+        /**
+         * Находит разность двух токенов и возвращает ответ
+         * \param x,y Вычитаемые токены
+         * \return Разность двух токенов, переданных в качестве аргумента
+         */
         private static Tokener.Token Substract(Tokener.Token x, Tokener.Token y)
         {
             return new Tokener.Token
@@ -48,6 +83,11 @@ namespace Polynoms
             };
         }
 
+        /**
+         * Находит произведение двух токенов и возвращает ответ
+         * \param x,y Умножаемые токены
+         * \return Произведение двух токенов, переданных в качестве аргумента
+         */
         private static Tokener.Token Multiply(Tokener.Token x, Tokener.Token y)
         {
             return new Tokener.Token
@@ -57,6 +97,11 @@ namespace Polynoms
             };
         }
 
+        /**
+         * Находит частное двух токенов и возвращает ответ
+         * \param x,y Делимые токены
+         * \return Частное двух токенов, переданных в качестве аргумента
+         */
         private static Tokener.Token Divide(Tokener.Token x, Tokener.Token y)
         {
             return new Tokener.Token
@@ -66,6 +111,11 @@ namespace Polynoms
             };
         }
 
+        /**
+         * Находит степень двух токенов и возвращает ответ
+         * \param x,y Возводимые в степень токены
+         * \return Результат возведения в степень двух токенов, переданных в качестве аргумента
+         */
         private static Tokener.Token Pow(Tokener.Token x, Tokener.Token y)
         {
             return new Tokener.Token
@@ -75,11 +125,22 @@ namespace Polynoms
             };
         }
 
+        /**
+         * Находит степень двух дробных чисел и возвращает ответ
+         * \param x,y Возводимые в степень дробные числа
+         * \return Результат возведения в степень двух дробных чисел, переданных в качестве аргумента
+         */
         private static double Pow(double x, double y)
         {
             return Math.Round(Math.Pow(x, y), 3);
         }
 
+        /**
+         * Подсчитывает значение полинома
+         * \param pol Полином, значение которого необходимо подсчитать
+         * \param value Значение, которое необходимо подставить, вместо переменной
+         * \return Ответ, в котором может содержаться либо ошибка и ее код, либо верное значение
+         */
         public static Answer CalculatePolynomValue(string pol, string value)
         {
             pol = pol.Replace(" ", string.Empty);
@@ -157,6 +218,11 @@ namespace Polynoms
             return new Answer { Ans = tokens[0].Value, Code = AnswerCode.Ok };
         }
 
+        /**
+         * Переводит полином в строку
+         * \param pol Полином, который необходимо перевести в строку
+         * \return Ответ, в котором может содержаться либо ошибка и ее код, либо верная строка
+         */
         public static Answer PolynomToStringConvert(string pol)
         {
             pol = pol.Replace(" ", string.Empty);
@@ -407,6 +473,11 @@ namespace Polynoms
             };
         }
 
+        /**
+         * Переводит строку в полином
+         * \param str Строка, которую необходи
+         * \return Результат возведения в степень двух дробных чисел, переданных в качестве аргумента
+         */
         public static Answer StringToPolynomConvert(string str)
         {
             List<double> nums;
@@ -436,6 +507,11 @@ namespace Polynoms
             return new Answer { Ans = answer.ToString(), Code = AnswerCode.Ok };
         }
 
+        /**
+         * Дифференцирует полином
+         * \param str Строка, которую необходимо дифференцировать
+         * \return Результат возведения в степень двух дробных чисел, переданных в качестве аргумента
+         */
         public static Answer DifferentialStringCalculate(string str)
         {
             List<double> nums;
@@ -455,15 +531,21 @@ namespace Polynoms
             return new Answer { Ans = answer.ToString(), Code = AnswerCode.Ok };
         }
 
+        /**
+         * Делегат
+         * \param x,y Токены
+         * \return Токен-ответ
+         */
         private delegate Tokener.Token CalcDelegate(Tokener.Token x, Tokener.Token y);
 
+        ///Коэффциент и степень перемменной
         private struct PolynomPow
         {
             public double Power;
             public double Value;
         }
 
-         
+        ///Ответ функции
         public struct Answer
         {
             public string Ans;
