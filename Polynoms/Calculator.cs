@@ -80,6 +80,83 @@ namespace Polynoms
             return Math.Round(Math.Pow(x, y), 3);
         }
 
+        public static Answer CalculatePolynomValue(string pol, string value)
+        {
+            pol = pol.Replace(" ", string.Empty);
+            value = value.Replace(" ", string.Empty);
+            List<Tokener.Token> tokens;
+            try
+            {
+                tokens = Tokener.TokenizeString(pol + '$');
+                double.Parse(value.Trim());
+            }
+            catch (WarningException e)
+            {
+                return new Answer { Ans = e.Message, Code = AnswerCode.Warning };
+            }
+            catch (ArithmeticException e)
+            {
+                return new Answer { Ans = e.Message, Code = AnswerCode.Error };
+            }
+            catch (FormatException)
+            {
+                return new Answer { Ans = "Введен не числовой формат", Code = AnswerCode.Error };
+            }
+
+            while (tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "^" }))
+            {
+                var index = tokens.FindIndex(x => x.Value == "^");
+                ReplaceNear(tokens, index, value);
+                Calculate(tokens, index, Pow);
+            }
+
+            while (tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "*" }) ||
+                   tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "/" }))
+            {
+                var indexDiv = tokens.FindIndex(x => x.Value == "/");
+                var indexMul = tokens.FindIndex(x => x.Value == "*");
+                int index;
+                CalcDelegate del;
+                if (indexMul < indexDiv && indexMul != -1 || indexDiv == -1)
+                {
+                    index = indexMul;
+                    del = Multiply;
+                }
+                else
+                {
+                    index = indexDiv;
+                    del = Divide;
+                }
+
+                ReplaceNear(tokens, index, value);
+                Calculate(tokens, index, del);
+            }
+
+            while (tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "+" }) ||
+                   tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "-" }))
+            {
+                var indexAdd = tokens.FindIndex(x => x.Value == "+");
+                var indexSub = tokens.FindIndex(x => x.Value == "-");
+                int index;
+                CalcDelegate del;
+                if (indexSub < indexAdd && indexSub != -1)
+                {
+                    index = indexSub;
+                    del = Substract;
+                }
+                else
+                {
+                    index = indexAdd;
+                    del = Add;
+                }
+
+                ReplaceNear(tokens, index, value);
+                Calculate(tokens, index, del);
+            }
+
+            return new Answer { Ans = tokens[0].Value, Code = AnswerCode.Ok };
+        }
+
         private delegate Tokener.Token CalcDelegate(Tokener.Token x, Tokener.Token y);
 
          
