@@ -1,0 +1,2 @@
+C:\Users\salty\source\repos\Polynoms — копия\PolynomsTest\obj\Debug\PolynomsTest.csprojAssemblyReference.cache
+C:\Users\salty\source\repos\Polynoms — копия\PolynomsTest\obj\Debug\PolynomsTest.csproj.CoreCompileInputs.cache
