@@ -1,0 +1,726 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Polynoms: Класс Polynoms.Calculator</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Polynoms
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_polynoms.html">Polynoms</a></li><li class="navelem"><a class="el" href="class_polynoms_1_1_calculator.html">Calculator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pri-methods">Закрытые члены</a> &#124;
+<a href="#pri-static-methods">Закрытые статические члены</a> &#124;
+<a href="class_polynoms_1_1_calculator-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс Polynoms.Calculator</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс, предназначенный для подсчётов  
+ <a href="class_polynoms_1_1_calculator.html#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_polynoms_1_1_calculator_1_1_answer.html">Answer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ответ функции  <a href="struct_polynoms_1_1_calculator_1_1_answer.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_polynoms_1_1_calculator_1_1_polynom_pow.html">PolynomPow</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Коэффциент и степень перемменной  <a href="struct_polynoms_1_1_calculator_1_1_polynom_pow.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a2da3491496f8355e75255f80f5b61037"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#a2da3491496f8355e75255f80f5b61037">AnswerCode</a> { <a class="el" href="class_polynoms_1_1_calculator.html#a2da3491496f8355e75255f80f5b61037aa60852f204ed8028c1c58808b746d115">AnswerCode.Ok</a> = 0, 
+<a class="el" href="class_polynoms_1_1_calculator.html#a2da3491496f8355e75255f80f5b61037a902b0d55fddef6f8d651fe1035b7d4bd">AnswerCode.Error</a> = 1, 
+<a class="el" href="class_polynoms_1_1_calculator.html#a2da3491496f8355e75255f80f5b61037a0eaadb4fcb48a0a0ed7bc9868be9fbaa">AnswerCode.Warning</a> = 2
+ }</td></tr>
+<tr class="memdesc:a2da3491496f8355e75255f80f5b61037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Набор возможных кодов ответа  <a href="class_polynoms_1_1_calculator.html#a2da3491496f8355e75255f80f5b61037">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2da3491496f8355e75255f80f5b61037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a7fc9c17007372aec06c217ac3614c510"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_polynoms_1_1_calculator_1_1_answer.html">Answer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#a7fc9c17007372aec06c217ac3614c510">CalculatePolynomValue</a> (string pol, string value)</td></tr>
+<tr class="separator:a7fc9c17007372aec06c217ac3614c510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49fa2eccf5f0d3313437c46093bc05e9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_polynoms_1_1_calculator_1_1_answer.html">Answer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#a49fa2eccf5f0d3313437c46093bc05e9">PolynomToStringConvert</a> (string pol)</td></tr>
+<tr class="separator:a49fa2eccf5f0d3313437c46093bc05e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38263e8ea9507c5d7e4b1a4d2ef32321"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_polynoms_1_1_calculator_1_1_answer.html">Answer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#a38263e8ea9507c5d7e4b1a4d2ef32321">StringToPolynomConvert</a> (string str)</td></tr>
+<tr class="separator:a38263e8ea9507c5d7e4b1a4d2ef32321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a846367e704e85de96d4aeed4ca89f3d1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_polynoms_1_1_calculator_1_1_answer.html">Answer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#a846367e704e85de96d4aeed4ca89f3d1">DifferentialStringCalculate</a> (string str)</td></tr>
+<tr class="separator:a846367e704e85de96d4aeed4ca89f3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:aadaf9e1ca3ce7bd6b73c04e2aaeaf1b1"><td class="memItemLeft" align="right" valign="top">delegate <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#aadaf9e1ca3ce7bd6b73c04e2aaeaf1b1">CalcDelegate</a> (<a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> x, <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> y)</td></tr>
+<tr class="separator:aadaf9e1ca3ce7bd6b73c04e2aaeaf1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Закрытые статические члены</h2></td></tr>
+<tr class="memitem:aa954cb74e7ed4dc1c4c51a40a44c1825"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#aa954cb74e7ed4dc1c4c51a40a44c1825">ReplaceNear</a> (IList&lt; <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> &gt; tokens, int index, string value)</td></tr>
+<tr class="separator:aa954cb74e7ed4dc1c4c51a40a44c1825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba400dee11957338fae0ab10364015f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#aba400dee11957338fae0ab10364015f1">Calculate</a> (IList&lt; <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> &gt; tokens, int index, <a class="el" href="class_polynoms_1_1_calculator.html#aadaf9e1ca3ce7bd6b73c04e2aaeaf1b1">CalcDelegate</a> mathAction)</td></tr>
+<tr class="separator:aba400dee11957338fae0ab10364015f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5b5e2c979a1c2848775219f2c6738db"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#af5b5e2c979a1c2848775219f2c6738db">Add</a> (<a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> x, <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> y)</td></tr>
+<tr class="separator:af5b5e2c979a1c2848775219f2c6738db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94abf7f63a73d63e7f987bfacd60a6b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#a94abf7f63a73d63e7f987bfacd60a6b5">Substract</a> (<a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> x, <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> y)</td></tr>
+<tr class="separator:a94abf7f63a73d63e7f987bfacd60a6b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7a8a08db635ea156e5e139698f93a8f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#ac7a8a08db635ea156e5e139698f93a8f">Multiply</a> (<a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> x, <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> y)</td></tr>
+<tr class="separator:ac7a8a08db635ea156e5e139698f93a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841e64c2e0ff8fa8949cb0a682804632"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#a841e64c2e0ff8fa8949cb0a682804632">Divide</a> (<a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> x, <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> y)</td></tr>
+<tr class="separator:a841e64c2e0ff8fa8949cb0a682804632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4cd1a4207d712a4589a38397726bb00"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#af4cd1a4207d712a4589a38397726bb00">Pow</a> (<a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> x, <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> y)</td></tr>
+<tr class="separator:af4cd1a4207d712a4589a38397726bb00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac213258d1ab4635b8b864ae1531b94e0"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_polynoms_1_1_calculator.html#ac213258d1ab4635b8b864ae1531b94e0">Pow</a> (double x, double y)</td></tr>
+<tr class="separator:ac213258d1ab4635b8b864ae1531b94e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Класс, предназначенный для подсчётов </p>
+<p>Данный класс имеет различные функции для подсчёта полиномов, заранее переданных в виде списка токенов </p>
+</div><h2 class="groupheader">Перечисления</h2>
+<a id="a2da3491496f8355e75255f80f5b61037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da3491496f8355e75255f80f5b61037">&#9670;&nbsp;</a></span>AnswerCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_polynoms_1_1_calculator.html#a2da3491496f8355e75255f80f5b61037">Polynoms.Calculator.AnswerCode</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Набор возможных кодов ответа </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a2da3491496f8355e75255f80f5b61037aa60852f204ed8028c1c58808b746d115"></a>Ok&#160;</td><td class="fielddoc"><p>Указывает на то, что пользователь передал верные данные </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2da3491496f8355e75255f80f5b61037a902b0d55fddef6f8d651fe1035b7d4bd"></a>Error&#160;</td><td class="fielddoc"><p>Указывает на то, что в данных, переданных пользователем, была критическая ошибка </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2da3491496f8355e75255f80f5b61037a0eaadb4fcb48a0a0ed7bc9868be9fbaa"></a>Warning&#160;</td><td class="fielddoc"><p>Указывает на то, что в данных, переданных пользователем, была не критическая ошибка </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="af5b5e2c979a1c2848775219f2c6738db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5b5e2c979a1c2848775219f2c6738db">&#9670;&nbsp;</a></span>Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> Polynoms.Calculator.Add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Складывает два токена и возвращает ответ </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>Складываемые токены </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Сумму двух токенов, переданных в качестве аргумента </dd></dl>
+
+</div>
+</div>
+<a id="aadaf9e1ca3ce7bd6b73c04e2aaeaf1b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadaf9e1ca3ce7bd6b73c04e2aaeaf1b1">&#9670;&nbsp;</a></span>CalcDelegate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> Polynoms.Calculator.CalcDelegate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Делегат </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>Токены </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Токен-ответ </dd></dl>
+
+</div>
+</div>
+<a id="aba400dee11957338fae0ab10364015f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba400dee11957338fae0ab10364015f1">&#9670;&nbsp;</a></span>Calculate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Polynoms.Calculator.Calculate </td>
+          <td>(</td>
+          <td class="paramtype">IList&lt; <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> &gt;&#160;</td>
+          <td class="paramname"><em>tokens</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_polynoms_1_1_calculator.html#aadaf9e1ca3ce7bd6b73c04e2aaeaf1b1">CalcDelegate</a>&#160;</td>
+          <td class="paramname"><em>mathAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Считает значение токенов вокруг заданного токена и заменяет подсчитанные токены на ответ </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tokens</td><td>Лист всех токенов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Индекс токена, вокруг которого необходимо произвести подсчёт </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mathAction</td><td>Математическая функция, которую необходимо выполнить над токенами </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7fc9c17007372aec06c217ac3614c510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fc9c17007372aec06c217ac3614c510">&#9670;&nbsp;</a></span>CalculatePolynomValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_polynoms_1_1_calculator_1_1_answer.html">Answer</a> Polynoms.Calculator.CalculatePolynomValue </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Подсчитывает значение полинома </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pol</td><td>Полином, значение которого необходимо подсчитать </td></tr>
+    <tr><td class="paramname">value</td><td>Значение, которое необходимо подставить, вместо переменной </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Ответ, в котором может содержаться либо ошибка и ее код, либо верное значение </dd></dl>
+
+</div>
+</div>
+<a id="a846367e704e85de96d4aeed4ca89f3d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846367e704e85de96d4aeed4ca89f3d1">&#9670;&nbsp;</a></span>DifferentialStringCalculate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_polynoms_1_1_calculator_1_1_answer.html">Answer</a> Polynoms.Calculator.DifferentialStringCalculate </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Дифференцирует полином </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Строка, которую необходимо дифференцировать </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Результат возведения в степень двух дробных чисел, переданных в качестве аргумента </dd></dl>
+
+</div>
+</div>
+<a id="a841e64c2e0ff8fa8949cb0a682804632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a841e64c2e0ff8fa8949cb0a682804632">&#9670;&nbsp;</a></span>Divide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> Polynoms.Calculator.Divide </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Находит частное двух токенов и возвращает ответ </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>Делимые токены </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Частное двух токенов, переданных в качестве аргумента </dd></dl>
+
+</div>
+</div>
+<a id="ac7a8a08db635ea156e5e139698f93a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7a8a08db635ea156e5e139698f93a8f">&#9670;&nbsp;</a></span>Multiply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> Polynoms.Calculator.Multiply </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Находит произведение двух токенов и возвращает ответ </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>Умножаемые токены </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Произведение двух токенов, переданных в качестве аргумента </dd></dl>
+
+</div>
+</div>
+<a id="a49fa2eccf5f0d3313437c46093bc05e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49fa2eccf5f0d3313437c46093bc05e9">&#9670;&nbsp;</a></span>PolynomToStringConvert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_polynoms_1_1_calculator_1_1_answer.html">Answer</a> Polynoms.Calculator.PolynomToStringConvert </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pol</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Переводит полином в строку </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pol</td><td>Полином, который необходимо перевести в строку </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Ответ, в котором может содержаться либо ошибка и ее код, либо верная строка </dd></dl>
+
+</div>
+</div>
+<a id="ac213258d1ab4635b8b864ae1531b94e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac213258d1ab4635b8b864ae1531b94e0">&#9670;&nbsp;</a></span>Pow() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double Polynoms.Calculator.Pow </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Находит степень двух дробных чисел и возвращает ответ </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>Возводимые в степень дробные числа </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Результат возведения в степень двух дробных чисел, переданных в качестве аргумента </dd></dl>
+
+</div>
+</div>
+<a id="af4cd1a4207d712a4589a38397726bb00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4cd1a4207d712a4589a38397726bb00">&#9670;&nbsp;</a></span>Pow() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> Polynoms.Calculator.Pow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Находит степень двух токенов и возвращает ответ </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>Возводимые в степень токены </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Результат возведения в степень двух токенов, переданных в качестве аргумента </dd></dl>
+
+</div>
+</div>
+<a id="aa954cb74e7ed4dc1c4c51a40a44c1825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa954cb74e7ed4dc1c4c51a40a44c1825">&#9670;&nbsp;</a></span>ReplaceNear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Polynoms.Calculator.ReplaceNear </td>
+          <td>(</td>
+          <td class="paramtype">IList&lt; <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> &gt;&#160;</td>
+          <td class="paramname"><em>tokens</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Заменяет переменные вокруг заданного токена на числа </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tokens</td><td>Лист всех токенов </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Индекс токена, вокруг которого необходимо заменить переменные на числа </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Значение, на которое необходимо заменить переменные </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a38263e8ea9507c5d7e4b1a4d2ef32321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38263e8ea9507c5d7e4b1a4d2ef32321">&#9670;&nbsp;</a></span>StringToPolynomConvert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_polynoms_1_1_calculator_1_1_answer.html">Answer</a> Polynoms.Calculator.StringToPolynomConvert </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Переводит строку в полином </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Строка, которую необходи </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Результат возведения в степень двух дробных чисел, переданных в качестве аргумента </dd></dl>
+
+</div>
+</div>
+<a id="a94abf7f63a73d63e7f987bfacd60a6b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94abf7f63a73d63e7f987bfacd60a6b5">&#9670;&nbsp;</a></span>Substract()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a> Polynoms.Calculator.Substract </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_polynoms_1_1_tokener_1_1_token.html">Tokener.Token</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Находит разность двух токенов и возвращает ответ </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x,y</td><td>Вычитаемые токены </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Разность двух токенов, переданных в качестве аргумента </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>C:/Users/salty/source/repos/Polynoms/Polynoms/<a class="el" href="_calculator_8cs.html">Calculator.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

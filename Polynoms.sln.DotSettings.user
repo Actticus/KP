@@ -1,0 +1,20 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3de843b3_002D61b9_002D417f_002D86d0_002Ddc55af36c092/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CalculatorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE::.NETFramework,Version=v4.7.2::PolynomsTests.CalculatorTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE::.NETFramework,Version=v4.7.2::PolynomsTests.TokenerTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=79c7a33c_002D3e80_002D4390_002Db95d_002D22a7ed9b8b3d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CheckString" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;MSTest::F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE::.NETFramework,Version=v4.7.2::PolynomsTests.TokenerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE::.NETFramework,Version=v4.7.2::PolynomsTests.CalculatorTests.CalculatePolynomValue&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE::.NETFramework,Version=v4.7.2::PolynomsTests.CalculatorTests.CalculatePolynomValueError&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE::.NETFramework,Version=v4.7.2::PolynomsTests.CalculatorTests.PolToStringConvert&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE::.NETFramework,Version=v4.7.2::PolynomsTests.CalculatorTests.PolToStringConvertError&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE::.NETFramework,Version=v4.7.2::PolynomsTests.CalculatorTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	</wpf:ResourceDictionary>

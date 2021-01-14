@@ -1,0 +1,91 @@
+\hypertarget{class_polynoms_1_1_tokener}{}\doxysection{Класс Polynoms.\+Tokener}
+\label{class_polynoms_1_1_tokener}\index{Polynoms.Tokener@{Polynoms.Tokener}}
+
+
+Класс, отвечающий за токены и перевод строки в токены  
+
+
+\doxysubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_polynoms_1_1_tokener_1_1_token}{Token}}
+\begin{DoxyCompactList}\small\item\em Значение и тип токена \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые типы}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_polynoms_1_1_tokener_af90dc65043c56d94ba760cd8ae51d939}\label{class_polynoms_1_1_tokener_af90dc65043c56d94ba760cd8ae51d939}} 
+enum \mbox{\hyperlink{class_polynoms_1_1_tokener_af90dc65043c56d94ba760cd8ae51d939}{Token\+Type}} 
+\begin{DoxyCompactList}\small\item\em Набор типов токена \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \mbox{\hyperlink{struct_polynoms_1_1_tokener_1_1_token}{Token}} $>$ \mbox{\hyperlink{class_polynoms_1_1_tokener_ae8a79299c87c04ac599e3699eb9f4d85}{Tokenize\+String}} (string e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые типы}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_polynoms_1_1_tokener_aaa2ecdeb35f0e565e9a22354c2aeaade}\label{class_polynoms_1_1_tokener_aaa2ecdeb35f0e565e9a22354c2aeaade}} 
+enum \mbox{\hyperlink{class_polynoms_1_1_tokener_aaa2ecdeb35f0e565e9a22354c2aeaade}{Tokener\+State}} 
+\begin{DoxyCompactList}\small\item\em Набор состояний токенера \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_polynoms_1_1_tokener_a6e48fb2a5190e035b4560fae80fc77d7}{Is\+Var}} (char? v, char z)
+\item 
+static bool \mbox{\hyperlink{class_polynoms_1_1_tokener_adf413f36e1a0296b5a0f259a0b790e0e}{Is\+Op}} (char z)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс, отвечающий за токены и перевод строки в токены 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_polynoms_1_1_tokener_adf413f36e1a0296b5a0f259a0b790e0e}\label{class_polynoms_1_1_tokener_adf413f36e1a0296b5a0f259a0b790e0e}} 
+\index{Polynoms.Tokener@{Polynoms.Tokener}!IsOp@{IsOp}}
+\index{IsOp@{IsOp}!Polynoms.Tokener@{Polynoms.Tokener}}
+\doxysubsubsection{\texorpdfstring{IsOp()}{IsOp()}}
+{\footnotesize\ttfamily static bool Polynoms.\+Tokener.\+Is\+Op (\begin{DoxyParamCaption}\item[{char}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Проверяет, является ли символ операцией 
+\begin{DoxyParams}{Аргументы}
+{\em z} & Символ, который необходимо проверять \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+True, если z является операцией и False, если нет 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_polynoms_1_1_tokener_a6e48fb2a5190e035b4560fae80fc77d7}\label{class_polynoms_1_1_tokener_a6e48fb2a5190e035b4560fae80fc77d7}} 
+\index{Polynoms.Tokener@{Polynoms.Tokener}!IsVar@{IsVar}}
+\index{IsVar@{IsVar}!Polynoms.Tokener@{Polynoms.Tokener}}
+\doxysubsubsection{\texorpdfstring{IsVar()}{IsVar()}}
+{\footnotesize\ttfamily static bool Polynoms.\+Tokener.\+Is\+Var (\begin{DoxyParamCaption}\item[{char?}]{v,  }\item[{char}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Проверяет, является ли символ переменной 
+\begin{DoxyParams}{Аргументы}
+{\em v} & Переменная, с которой необходимо сравнивать \\
+\hline
+{\em z} & Символ, который необходимо проверять \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+True, если z является переменной и False, если нет 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_polynoms_1_1_tokener_ae8a79299c87c04ac599e3699eb9f4d85}\label{class_polynoms_1_1_tokener_ae8a79299c87c04ac599e3699eb9f4d85}} 
+\index{Polynoms.Tokener@{Polynoms.Tokener}!TokenizeString@{TokenizeString}}
+\index{TokenizeString@{TokenizeString}!Polynoms.Tokener@{Polynoms.Tokener}}
+\doxysubsubsection{\texorpdfstring{TokenizeString()}{TokenizeString()}}
+{\footnotesize\ttfamily static List$<$\mbox{\hyperlink{struct_polynoms_1_1_tokener_1_1_token}{Token}}$>$ Polynoms.\+Tokener.\+Tokenize\+String (\begin{DoxyParamCaption}\item[{string}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Проверяет, является ли символ переменной 
+\begin{DoxyParams}{Аргументы}
+{\em e} & Строка, которую необходимо перевести в токены \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Список токенов 
+\end{DoxyReturn}
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/salty/source/repos/\+Polynoms/\+Polynoms/Tokener.\+cs\end{DoxyCompactItemize}

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polynoms", "Polynoms\Polynoms.csproj", "{53E7D0F9-4E05-4AF3-927D-C26577D24399}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polynoms", "Polynoms\Polynoms.csproj", "{7F12D6A2-F658-4B02-A6BB-7517121EA3C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolynomsTests", "PolynomsTests\PolynomsTests.csproj", "{F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE}"
 EndProject
@@ -13,10 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{53E7D0F9-4E05-4AF3-927D-C26577D24399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53E7D0F9-4E05-4AF3-927D-C26577D24399}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53E7D0F9-4E05-4AF3-927D-C26577D24399}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53E7D0F9-4E05-4AF3-927D-C26577D24399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F12D6A2-F658-4B02-A6BB-7517121EA3C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F12D6A2-F658-4B02-A6BB-7517121EA3C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F12D6A2-F658-4B02-A6BB-7517121EA3C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F12D6A2-F658-4B02-A6BB-7517121EA3C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F19774CD-AEE2-4A3F-B943-52A1CC2C0CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7D7EDF26-6619-495F-B627-770EFFD7F741}
+		SolutionGuid = {7C2C9AD0-ED9C-47AF-8F8B-A2446C1EFD01}
 	EndGlobalSection
 EndGlobal

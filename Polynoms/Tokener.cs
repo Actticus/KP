@@ -75,158 +75,158 @@ namespace Polynoms
                 switch (state)
                 {
                     case TokenerState.Start:
+                    {
+                        if (char.IsDigit(z) || z == '-')
                         {
-                            if (char.IsDigit(z) || z == '-')
-                            {
-                                state = TokenerState.Operand;
-                            }
-                            else if (z == '$')
-                            {
-                                errorMessage = "Введена пустая строка";
-                                state = TokenerState.Warning;
-                            }
-                            else if (char.IsLetter(z))
-                            {
-                                pol = z;
-                                state = TokenerState.Polynom;
-                            }
-                            else if (IsOp(z))
-                            {
-                                errorMessage = "В начале строки был обнаружен оператор или неизвестный символ";
-                                state = TokenerState.Error;
-                            }
-                            else
-                            {
-                                errorMessage = "В начале строки был обнаружен неизвестный символ";
-                                state = TokenerState.Error;
-                            }
-
-                            break;
+                            state = TokenerState.Operand;
                         }
+                        else if (z == '$')
+                        {
+                            errorMessage = "Введена пустая строка";
+                            state = TokenerState.Warning;
+                        }
+                        else if (char.IsLetter(z))
+                        {
+                            pol = z;
+                            state = TokenerState.Polynom;
+                        }
+                        else if (IsOp(z))
+                        {
+                            errorMessage = "В начале строки был обнаружен оператор или неизвестный символ";
+                            state = TokenerState.Error;
+                        }
+                        else
+                        {
+                            errorMessage = "В начале строки был обнаружен неизвестный символ";
+                            state = TokenerState.Error;
+                        }
+
+                        break;
+                    }
                     case TokenerState.Operation:
+                    {
+                        if (char.IsDigit(z))
                         {
-                            if (char.IsDigit(z))
-                            {
-                                state = TokenerState.Operand;
-                            }
-                            else if (char.IsLetter(z) && IsVar(pol, z))
-                            {
-                                pol = z;
-                                state = TokenerState.Polynom;
-                            }
-                            else if (IsOp(z))
-                            {
-                                errorMessage = "В строке обнаружены два оператора подряд";
-                                state = TokenerState.Error;
-                            }
-                            else
-                            {
-                                errorMessage = "В строке обнаружен неизвестный символ после оператора";
-                                state = TokenerState.Error;
-                            }
-
-                            break;
+                            state = TokenerState.Operand;
                         }
+                        else if (char.IsLetter(z) && IsVar(pol, z))
+                        {
+                            pol = z;
+                            state = TokenerState.Polynom;
+                        }
+                        else if (IsOp(z))
+                        {
+                            errorMessage = "В строке обнаружены два оператора подряд";
+                            state = TokenerState.Error;
+                        }
+                        else
+                        {
+                            errorMessage = "В строке обнаружен неизвестный символ после оператора";
+                            state = TokenerState.Error;
+                        }
+
+                        break;
+                    }
                     case TokenerState.Operand:
+                    {
+                        if (char.IsDigit(z))
                         {
-                            if (char.IsDigit(z))
-                            {
-                                //pass
-                            }
-                            else if (z == '.')
-                            {
-                                state = TokenerState.Dot;
-                            }
-                            else if (IsOp(z))
-                            {
-                                state = TokenerState.Operation;
-                            }
-                            else if (z == '$')
-                            {
-                                state = TokenerState.End;
-                            }
-                            else if (char.IsLetter(z) && IsVar(pol, z))
-                            {
-                                errorMessage = "После числа был обнаружен полином без операции между ними";
-                                state = TokenerState.Error;
-                            }
-                            else
-                            {
-                                errorMessage = "В строке обнаружен неизвестный символ после числа";
-                                state = TokenerState.Error;
-                            }
-
-                            break;
+                            //pass
                         }
+                        else if (z == '.')
+                        {
+                            state = TokenerState.Dot;
+                        }
+                        else if (IsOp(z))
+                        {
+                            state = TokenerState.Operation;
+                        }
+                        else if (z == '$')
+                        {
+                            state = TokenerState.End;
+                        }
+                        else if (char.IsLetter(z) && IsVar(pol, z))
+                        {
+                            errorMessage = "После числа был обнаружен полином без операции между ними";
+                            state = TokenerState.Error;
+                        }
+                        else
+                        {
+                            errorMessage = "В строке обнаружен неизвестный символ после числа";
+                            state = TokenerState.Error;
+                        }
+
+                        break;
+                    }
                     case TokenerState.OperandAftDot:
+                    {
+                        if (char.IsDigit(z))
                         {
-                            if (char.IsDigit(z))
-                            {
-                                //pass
-                            }
-                            else if (IsOp(z))
-                            {
-                                state = TokenerState.Operation;
-                            }
-                            else if (z == '$')
-                            {
-                                state = TokenerState.End;
-                            }
-                            else if (z == '.')
-                            {
-                                errorMessage = "В строке обнаружена точка после дробного числа";
-                                state = TokenerState.Error;
-                            }
-                            else if (char.IsLetter(z) && IsVar(pol, z))
-                            {
-                                errorMessage = "В строке обнаружен полином после дробного числа";
-                                state = TokenerState.Error;
-                            }
-                            else
-                            {
-                                errorMessage = "В строке обнаружен неизвестный символ после дробного числа";
-                                state = TokenerState.Error;
-                            }
-
-                            break;
+                            //pass
                         }
+                        else if (IsOp(z))
+                        {
+                            state = TokenerState.Operation;
+                        }
+                        else if (z == '$')
+                        {
+                            state = TokenerState.End;
+                        }
+                        else if (z == '.')
+                        {
+                            errorMessage = "В строке обнаружена точка после дробного числа";
+                            state = TokenerState.Error;
+                        }
+                        else if (char.IsLetter(z) && IsVar(pol, z))
+                        {
+                            errorMessage = "В строке обнаружен полином после дробного числа";
+                            state = TokenerState.Error;
+                        }
+                        else
+                        {
+                            errorMessage = "В строке обнаружен неизвестный символ после дробного числа";
+                            state = TokenerState.Error;
+                        }
+
+                        break;
+                    }
                     case TokenerState.Dot:
+                    {
+                        if (char.IsDigit(z))
                         {
-                            if (char.IsDigit(z))
-                            {
-                                state = TokenerState.OperandAftDot;
-                            }
-                            else
-                            {
-                                errorMessage = "После точки был обнаружен не числовой символ";
-                                state = TokenerState.Error;
-                            }
-
-                            break;
+                            state = TokenerState.OperandAftDot;
                         }
+                        else
+                        {
+                            errorMessage = "После точки был обнаружен не числовой символ";
+                            state = TokenerState.Error;
+                        }
+
+                        break;
+                    }
                     case TokenerState.Polynom:
+                    {
+                        if (IsOp(z))
                         {
-                            if (IsOp(z))
-                            {
-                                state = TokenerState.Operation;
-                            }
-                            else if (z == '$')
-                            {
-                                state = TokenerState.End;
-                            }
-                            else if (char.IsDigit(z))
-                            {
-                                errorMessage = "После полинома было обнаружено число без операции между ними";
-                                state = TokenerState.Error;
-                            }
-                            else
-                            {
-                                errorMessage = "После полинома был обнаружен неизвестный символ";
-                                state = TokenerState.Error;
-                            }
-
-                            break;
+                            state = TokenerState.Operation;
                         }
+                        else if (z == '$')
+                        {
+                            state = TokenerState.End;
+                        }
+                        else if (char.IsDigit(z))
+                        {
+                            errorMessage = "После полинома было обнаружено число без операции между ними";
+                            state = TokenerState.Error;
+                        }
+                        else
+                        {
+                            errorMessage = "После полинома был обнаружен неизвестный символ";
+                            state = TokenerState.Error;
+                        }
+
+                        break;
+                    }
                 }
 
                 if (state == TokenerState.Error) break;
@@ -245,7 +245,7 @@ namespace Polynoms
                 else if (oldstate == TokenerState.Operand && state != TokenerState.Operand ||
                          oldstate == TokenerState.OperandAftDot && state != TokenerState.OperandAftDot)
                 {
-                    var t = new Token { Value = operand, Type = TokenType.Number };
+                    var t = new Token {Value = operand, Type = TokenType.Number};
                     result.Add(t);
                 }
 

@@ -8,9 +8,9 @@
         mc:Ignorable="d" Height="300" Width="850" WindowStyle="None" WindowStartupLocation="Manual"
         ResizeMode="NoResize">
     <Window.Resources>
-        <Image x:Key="closeIcon" Source="close.png" />
-        <Image x:Key="turnupIcon" Source="turnup.png" />
-        <Image x:Key="turndownIcon" Source="turndown.png" />
+        <Image x:Key="closeIcon" Source="icons/close.png" />
+        <Image x:Key="turnupIcon" Source="icons/turnup.png" />
+        <Image x:Key="turndownIcon" Source="icons/turndown.png" />
         <Style x:Key="Roboto">
             <Setter Property="TextElement.FontFamily" Value="/fonts;Component/#Roboto Bk" />
         </Style>

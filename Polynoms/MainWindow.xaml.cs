@@ -22,14 +22,14 @@ namespace Polynoms
         {
             InitializeComponent();
             _previousButton = Button0;
-            _buttons = new[] { Button0, Button1, Button2, Button3 };
-            _grids = new[] { Grid0, Grid1, Grid2, Grid3 };
+            _buttons = new[] {Button0, Button1, Button2, Button3};
+            _grids = new[] {Grid0, Grid1, Grid2, Grid3};
         }
 
         ///Обрабатывает нажатие на одну из вкладок
         private void TabButtonClick(object sender, RoutedEventArgs e)
         {
-            var currentButton = (Button)e.Source;
+            var currentButton = (Button) e.Source;
             var blueBrush = new SolidColorBrush(Color.FromRgb(7, 78, 232));
             var blackBrush = new SolidColorBrush(Colors.Black);
 

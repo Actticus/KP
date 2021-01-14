@@ -37,9 +37,9 @@ namespace Polynoms
         private static void ReplaceNear(IList<Tokener.Token> tokens, int index, string value)
         {
             if (tokens[index - 1].Type == Tokener.TokenType.Variable)
-                tokens[index - 1] = new Tokener.Token { Type = Tokener.TokenType.Number, Value = value };
+                tokens[index - 1] = new Tokener.Token {Type = Tokener.TokenType.Number, Value = value};
             if (tokens[index + 1].Type == Tokener.TokenType.Variable)
-                tokens[index + 1] = new Tokener.Token { Type = Tokener.TokenType.Number, Value = value };
+                tokens[index + 1] = new Tokener.Token {Type = Tokener.TokenType.Number, Value = value};
         }
 
         /**
@@ -153,26 +153,26 @@ namespace Polynoms
             }
             catch (WarningException e)
             {
-                return new Answer { Ans = e.Message, Code = AnswerCode.Warning };
+                return new Answer {Ans = e.Message, Code = AnswerCode.Warning};
             }
             catch (ArithmeticException e)
             {
-                return new Answer { Ans = e.Message, Code = AnswerCode.Error };
+                return new Answer {Ans = e.Message, Code = AnswerCode.Error};
             }
             catch (FormatException)
             {
-                return new Answer { Ans = "Введен не числовой формат", Code = AnswerCode.Error };
+                return new Answer {Ans = "Введен не числовой формат", Code = AnswerCode.Error};
             }
 
-            while (tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "^" }))
+            while (tokens.Contains(new Tokener.Token {Type = Tokener.TokenType.Operation, Value = "^"}))
             {
                 var index = tokens.FindIndex(x => x.Value == "^");
                 ReplaceNear(tokens, index, value);
                 Calculate(tokens, index, Pow);
             }
 
-            while (tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "*" }) ||
-                   tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "/" }))
+            while (tokens.Contains(new Tokener.Token {Type = Tokener.TokenType.Operation, Value = "*"}) ||
+                   tokens.Contains(new Tokener.Token {Type = Tokener.TokenType.Operation, Value = "/"}))
             {
                 var indexDiv = tokens.FindIndex(x => x.Value == "/");
                 var indexMul = tokens.FindIndex(x => x.Value == "*");
@@ -193,8 +193,8 @@ namespace Polynoms
                 Calculate(tokens, index, del);
             }
 
-            while (tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "+" }) ||
-                   tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "-" }))
+            while (tokens.Contains(new Tokener.Token {Type = Tokener.TokenType.Operation, Value = "+"}) ||
+                   tokens.Contains(new Tokener.Token {Type = Tokener.TokenType.Operation, Value = "-"}))
             {
                 var indexAdd = tokens.FindIndex(x => x.Value == "+");
                 var indexSub = tokens.FindIndex(x => x.Value == "-");
@@ -215,7 +215,7 @@ namespace Polynoms
                 Calculate(tokens, index, del);
             }
 
-            return new Answer { Ans = tokens[0].Value, Code = AnswerCode.Ok };
+            return new Answer {Ans = tokens[0].Value, Code = AnswerCode.Ok};
         }
 
         /**
@@ -233,15 +233,15 @@ namespace Polynoms
             }
             catch (WarningException e)
             {
-                return new Answer { Ans = e.Message, Code = AnswerCode.Warning };
+                return new Answer {Ans = e.Message, Code = AnswerCode.Warning};
             }
             catch (ArithmeticException e)
             {
-                return new Answer { Ans = e.Message, Code = AnswerCode.Error };
+                return new Answer {Ans = e.Message, Code = AnswerCode.Error};
             }
 
             var polynomPows = new List<PolynomPow>();
-            tokens.Insert(0, new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "+" });
+            tokens.Insert(0, new Tokener.Token {Type = Tokener.TokenType.Operation, Value = "+"});
 
             while (tokens.FindIndex(x => x.Type == Tokener.TokenType.Variable) != -1)
             {
@@ -310,7 +310,7 @@ namespace Polynoms
                         tokens.RemoveAt(i - 1);
                         break;
                     default:
-                        return new Answer { Ans = "Неверный формат данных", Code = AnswerCode.Error };
+                        return new Answer {Ans = "Неверный формат данных", Code = AnswerCode.Error};
                 }
 
                 i = tokens.FindIndex(x => x.Type == Tokener.TokenType.Variable);
@@ -337,7 +337,7 @@ namespace Polynoms
                 while (indexPow != -1 && indexPow < index)
                 {
                     if (tokens[indexPow + 1].Type == Tokener.TokenType.Variable)
-                        return new Answer { Ans = "Неверный формат данных", Code = AnswerCode.Error };
+                        return new Answer {Ans = "Неверный формат данных", Code = AnswerCode.Error};
                     if (indexPow < i + 3)
                     {
                         indexPow = tokens.FindIndex(indexPow + 1, x => x.Value == "^");
@@ -393,7 +393,7 @@ namespace Polynoms
                 if (power.Equals(0))
                     power = 1;
                 if (!powPos) power *= -1;
-                polynomPows.Add(new PolynomPow { Value = value, Power = power });
+                polynomPows.Add(new PolynomPow {Value = value, Power = power});
             }
 
             if (tokens.Count > 0)
@@ -427,8 +427,8 @@ namespace Polynoms
                     Calculate(tokens, index, del);
                 }
 
-                while (tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "+" }) ||
-                       tokens.Contains(new Tokener.Token { Type = Tokener.TokenType.Operation, Value = "-" }))
+                while (tokens.Contains(new Tokener.Token {Type = Tokener.TokenType.Operation, Value = "+"}) ||
+                       tokens.Contains(new Tokener.Token {Type = Tokener.TokenType.Operation, Value = "-"}))
                 {
                     var indexAdd = tokens.FindIndex(x => x.Value == "+");
                     var indexSub = tokens.FindIndex(x => x.Value == "-");
@@ -448,7 +448,7 @@ namespace Polynoms
                     Calculate(tokens, index, del);
                 }
 
-                polynomPows.Add(new PolynomPow { Value = double.Parse(tokens[0].Value), Power = 0 });
+                polynomPows.Add(new PolynomPow {Value = double.Parse(tokens[0].Value), Power = 0});
             }
 
             for (var i = 0; i < polynomPows.Count; i++)
@@ -457,13 +457,13 @@ namespace Polynoms
                 var list = polynomPows.FindAll(x => x.Power == power);
                 var value = list.Sum(element => element.Value);
                 polynomPows.RemoveAll(x => x.Power == power);
-                polynomPows.Add(new PolynomPow { Power = power, Value = value });
+                polynomPows.Add(new PolynomPow {Power = power, Value = value});
             }
 
             polynomPows = polynomPows.OrderByDescending(x => x.Power).ToList();
             for (var i = 0; i < polynomPows[0].Power; i++)
                 if (polynomPows.FindIndex(x => x.Power.Equals(i)) == -1)
-                    polynomPows.Add(new PolynomPow { Power = i, Value = 0 });
+                    polynomPows.Add(new PolynomPow {Power = i, Value = 0});
 
             return new Answer
             {
@@ -483,12 +483,12 @@ namespace Polynoms
             List<double> nums;
             try
             {
-                nums = str.Trim().Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(double.Parse)
+                nums = str.Trim().Split(new[] {',', ' '}, StringSplitOptions.RemoveEmptyEntries).Select(double.Parse)
                     .ToList();
             }
             catch (FormatException)
             {
-                return new Answer { Ans = "Неверный формат строки", Code = AnswerCode.Error };
+                return new Answer {Ans = "Неверный формат строки", Code = AnswerCode.Error};
             }
 
             var answer = new StringBuilder();
@@ -504,7 +504,7 @@ namespace Polynoms
                     answer.Append(nums[i] + "*x^" + i);
             }
 
-            return new Answer { Ans = answer.ToString(), Code = AnswerCode.Ok };
+            return new Answer {Ans = answer.ToString(), Code = AnswerCode.Ok};
         }
 
         /**
@@ -517,18 +517,18 @@ namespace Polynoms
             List<double> nums;
             try
             {
-                nums = str.Trim().Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(double.Parse)
+                nums = str.Trim().Split(new[] {',', ' '}, StringSplitOptions.RemoveEmptyEntries).Select(double.Parse)
                     .ToList();
             }
             catch (FormatException)
             {
-                return new Answer { Ans = "Неверный формат строки", Code = AnswerCode.Error };
+                return new Answer {Ans = "Неверный формат строки", Code = AnswerCode.Error};
             }
 
             var answer = new StringBuilder();
             answer.Append(nums[1]);
             for (var i = 2; i < nums.Count; i++) answer.Append(", " + nums[i] * i);
-            return new Answer { Ans = answer.ToString(), Code = AnswerCode.Ok };
+            return new Answer {Ans = answer.ToString(), Code = AnswerCode.Ok};
         }
 
         /**

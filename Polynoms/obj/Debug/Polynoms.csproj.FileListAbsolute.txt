@@ -1,0 +1,32 @@
+C:\Users\salty\source\repos\Polynoms\Polynoms\bin\Debug\Polynoms.exe.config
+C:\Users\salty\source\repos\Polynoms\Polynoms\bin\Debug\Polynoms.exe
+C:\Users\salty\source\repos\Polynoms\Polynoms\bin\Debug\Polynoms.pdb
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\Polynoms.csprojAssemblyReference.cache
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\MainWindow.g.cs
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\App.g.cs
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\Polynoms_MarkupCompile.cache
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\Polynoms_MarkupCompile.lref
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\MainWindow.baml
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\Polynoms.g.resources
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\Polynoms.Properties.Resources.resources
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\Polynoms.csproj.GenerateResource.cache
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\Polynoms.csproj.CoreCompileInputs.cache
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\Polynoms.exe
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\Polynoms.pdb
+C:\Users\salty\source\repos\Polynoms\Polynoms\obj\Debug\Polynoms.Resource1.resources
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\bin\Debug\Polynoms.exe.config
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\bin\Debug\Polynoms.exe
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\bin\Debug\Polynoms.pdb
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\Polynoms.csprojAssemblyReference.cache
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\MainWindow.g.cs
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\App.g.cs
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\Polynoms_MarkupCompile.cache
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\Polynoms_MarkupCompile.lref
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\MainWindow.baml
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\Polynoms.g.resources
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\Polynoms.Properties.Resources.resources
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\Polynoms.Resource1.resources
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\Polynoms.csproj.GenerateResource.cache
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\Polynoms.csproj.CoreCompileInputs.cache
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\Polynoms.exe
+C:\Users\salty\source\repos\Polynoms — копия\Polynoms\obj\Debug\Polynoms.pdb
