@@ -10,7 +10,7 @@ namespace PolynomsTests
         public void CalculatePolynomValue()
         {
             var answer = Calculator.CalculatePolynomValue("1+2*x^2-2*x+2/2", "3");
-            Assert.AreEqual(new Calculator.Answer { Ans = "14", Code = Calculator.AnswerCode.Ok }, answer);
+            Assert.AreEqual(new Calculator.Answer {Ans = "14", Code = Calculator.AnswerCode.Ok}, answer);
         }
 
         [TestMethod]
