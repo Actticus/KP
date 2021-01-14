@@ -44,7 +44,26 @@ namespace Polynoms
 
         private void PolynomToStringCalculateButtonClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            var answerString = string.Empty;
+            var answer = Calculator.PolynomToStringConvert(PolToStrTextBox.Text);
+            switch (answer.Code)
+            {
+                case Calculator.AnswerCode.Error:
+                    AnswerLabel.Foreground = new SolidColorBrush(Colors.Red);
+                    answerString = "Ошибка: ";
+                    break;
+                case Calculator.AnswerCode.Ok:
+                    AnswerLabel.Foreground = new SolidColorBrush(Colors.Black);
+                    answerString = "Ответ: ";
+                    break;
+                case Calculator.AnswerCode.Warning:
+                    AnswerLabel.Foreground = new SolidColorBrush(Colors.Yellow);
+                    answerString = "Предупреждение: ";
+                    break;
+            }
+
+            answerString += answer.Ans;
+            AnswerLabel.Content = answerString;
         }
 
         private void CalcStringButtonClick(object sender, RoutedEventArgs e)
