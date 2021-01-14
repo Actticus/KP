@@ -15,6 +15,14 @@ namespace Polynoms
             Warning = 2  
         }
 
+        private static void ReplaceNear(IList<Tokener.Token> tokens, int index, string value)
+        {
+            if (tokens[index - 1].Type == Tokener.TokenType.Variable)
+                tokens[index - 1] = new Tokener.Token { Type = Tokener.TokenType.Number, Value = value };
+            if (tokens[index + 1].Type == Tokener.TokenType.Variable)
+                tokens[index + 1] = new Tokener.Token { Type = Tokener.TokenType.Number, Value = value };
+        }
+
         private static void Calculate(IList<Tokener.Token> tokens, int index, CalcDelegate mathAction)
         {
             tokens[index] = mathAction(tokens[index - 1], tokens[index + 1]);
