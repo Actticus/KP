@@ -157,9 +157,37 @@ namespace Polynoms
             return new Answer { Ans = tokens[0].Value, Code = AnswerCode.Ok };
         }
 
+        public static Answer StringToPolynomConvert(string str)
+        {
+            List<double> nums;
+            try
+            {
+                nums = str.Trim().Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(double.Parse)
+                    .ToList();
+            }
+            catch (FormatException)
+            {
+                return new Answer { Ans = "Неверный формат строки", Code = AnswerCode.Error };
+            }
+
+            var answer = new StringBuilder();
+            for (var i = 0; i < nums.Count; i++)
+            {
+                if (answer.ToString() != string.Empty && nums[i] > 0)
+                    answer.Append('+');
+                if (i == 0)
+                    answer.Append(nums[0]);
+                else if (nums[i] > 0)
+                    answer.Append(nums[i] + "*x^" + i);
+                else if (nums[i] < 0)
+                    answer.Append(nums[i] + "*x^" + i);
+            }
+
+            return new Answer { Ans = answer.ToString(), Code = AnswerCode.Ok };
+        }
+
         private delegate Tokener.Token CalcDelegate(Tokener.Token x, Tokener.Token y);
 
-         
         private struct PolynomPow
         {
             public double Power;
