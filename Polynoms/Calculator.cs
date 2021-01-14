@@ -186,6 +186,25 @@ namespace Polynoms
             return new Answer { Ans = answer.ToString(), Code = AnswerCode.Ok };
         }
 
+        public static Answer DifferentialStringCalculate(string str)
+        {
+            List<double> nums;
+            try
+            {
+                nums = str.Trim().Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(double.Parse)
+                    .ToList();
+            }
+            catch (FormatException)
+            {
+                return new Answer { Ans = "Неверный формат строки", Code = AnswerCode.Error };
+            }
+
+            var answer = new StringBuilder();
+            answer.Append(nums[1]);
+            for (var i = 2; i < nums.Count; i++) answer.Append(", " + nums[i] * i);
+            return new Answer { Ans = answer.ToString(), Code = AnswerCode.Ok };
+        }
+
         private delegate Tokener.Token CalcDelegate(Tokener.Token x, Tokener.Token y);
 
         private struct PolynomPow
