@@ -20,9 +20,16 @@ namespace Polynoms
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly Button[] _buttons;
+        private readonly Grid[] _grids;
+        private Button _previousButton;
+
         public MainWindow()
         {
             InitializeComponent();
+            _previousButton = Button0;
+            _buttons = new[] { Button0, Button1, Button2, Button3 };
+            _grids = new[] { Grid0, Grid1, Grid2, Grid3 };
         }
 
         private void StringToPolynomCalculateButtonClick(object sender, RoutedEventArgs e)
@@ -47,7 +54,24 @@ namespace Polynoms
 
         private void TabButtonClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            var currentButton = (Button)e.Source;
+            var blueBrush = new SolidColorBrush(Color.FromRgb(7, 78, 232));
+            var blackBrush = new SolidColorBrush(Colors.Black);
+
+            AnswerLabel.Content = string.Empty;
+
+            _previousButton.Foreground = blackBrush;
+            currentButton.Foreground = blueBrush;
+
+            GridCursor.Width = currentButton.Width;
+            var margin = _buttons.TakeWhile(butt => butt != currentButton).Sum(butt => butt.Width);
+            GridCursor.Margin = new Thickness(10 + margin, 0, 0, 0);
+
+            _grids[int.Parse(_previousButton.Uid)].Visibility = Visibility.Collapsed;
+            _grids[int.Parse(currentButton.Uid)].Visibility = Visibility.Visible;
+
+            _previousButton = currentButton;
+            AnswerLabel.Content = string.Empty;
         }
 
         private void Close(object sender, RoutedEventArgs e)
