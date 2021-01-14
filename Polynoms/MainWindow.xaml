@@ -3,10 +3,226 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Polynoms"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        mc:Ignorable="d" Height="300" Width="850" WindowStyle="None" WindowStartupLocation="Manual"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Image x:Key="closeIcon" Source="close.png" />
+        <Image x:Key="turnupIcon" Source="turnup.png" />
+        <Image x:Key="turndownIcon" Source="turndown.png" />
+        <Style x:Key="Roboto">
+            <Setter Property="TextElement.FontFamily" Value="/fonts;Component/#Roboto Bk" />
+        </Style>
+        <Style x:Key="DefaultButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="TextElement.FontFamily" Value="/fonts;Component/#Roboto Bk" />
+            <Setter Property="Background" Value="{x:Null}" />
+            <Setter Property="BorderBrush" Value="{x:Null}" />
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                                CornerRadius="5"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter"
+                                              Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DefaultTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="FontFamily" Value="/fonts;Component/#Roboto Bk" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="SnapsToDevicePixels"
+                    Value="True" />
+            <Setter Property="OverridesDefaultStyle"
+                    Value="True" />
+            <Setter Property="KeyboardNavigation.TabNavigation"
+                    Value="None" />
+            <Setter Property="FocusVisualStyle"
+                    Value="{x:Null}" />
+            <Setter Property="MinWidth"
+                    Value="120" />
+            <Setter Property="MinHeight"
+                    Value="20" />
+            <Setter Property="AllowDrop"
+                    Value="true" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Name="Border"
+                                CornerRadius="2"
+                                Padding="2"
+                                BorderThickness="1"
+                                Background="{x:Null}"
+                                BorderBrush="#AAAAAA">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="ReadOnly">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                                          Storyboard.TargetProperty="(Panel.Background).
+                    (SolidColorBrush.Color)" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="MouseOver" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ScrollViewer Margin="0"
+                                          x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <!--Кнопки управления окном-->
+    <StackPanel Background="White" MouseDown="DragWindow">
+        <Grid Height="40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="135*" />
+                <ColumnDefinition Width="182*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10.4,0" Grid.Column="1">
+                <Button Style="{StaticResource DefaultButtonStyle}" Content="{StaticResource turndownIcon}"
+                        VerticalAlignment="Center" Width="24" Height="24"
+                        Click="TurnDown" />
+                <Button Style="{StaticResource DefaultButtonStyle}" Content="{StaticResource turnupIcon}"
+                        VerticalAlignment="Center" Width="24" Height="24" />
+                <Button Style="{StaticResource DefaultButtonStyle}" Content="{StaticResource closeIcon}"
+                        VerticalAlignment="Center" Width="24" Height="24"
+                        Click="Close" />
+            </StackPanel>
+        </Grid>
+        <!--Tab-меню-->
+        <Grid Height="50">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10 0">
+                <Button Style="{StaticResource DefaultButtonStyle}" x:Name="Button0" Uid="0" Width="184" Height="48"
+                        Content="Значение полинома" FontSize="16"
+                        Foreground="#074EE8" Click="TabButtonClick" />
+                <Button Style="{StaticResource DefaultButtonStyle}" x:Name="Button1" Uid="1" Width="169" Height="48"
+                        Content="Полином в строку" FontSize="16"
+                        Foreground="Black" Click="TabButtonClick" />
+                <Button Style="{StaticResource DefaultButtonStyle}" x:Name="Button2" Uid="2" Width="169" Height="48"
+                        Content="Строку в полином" FontSize="16"
+                        Foreground="Black" Click="TabButtonClick" />
+                <Button Style="{StaticResource DefaultButtonStyle}" x:Name="Button3" Uid="3" Width="273" Height="48"
+                        Content="Дифференцирование полинома" FontSize="16"
+                        Foreground="Black" Click="TabButtonClick" />
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="GridCursor" Width="184" Height="5" Background="#074EE8" Margin="10, 0, 0, 0"
+              HorizontalAlignment="Left" />
+        <!--Значение полинома-->
+        <Grid x:Name="Grid0" Visibility="Visible">
+            <StackPanel>
+                <Grid Height="21" Margin="0 15 0 0">
+                    <Label Margin="10 0 0 0" HorizontalAlignment="Left" Content="Полином" Width="400"
+                           Style="{StaticResource Roboto}" Background="{x:Null}" Foreground="#767676"
+                           VerticalAlignment="Top" />
+                    <Label Margin="450 0 0 0" HorizontalAlignment="Left" Width="225" Content="Значение полинома"
+                           Style="{StaticResource Roboto}" Background="{x:Null}" Foreground="#767676"
+                           VerticalAlignment="Top" />
+                </Grid>
+                <Grid Height="40">
+                    <TextBox x:Name="CalcPolStringTextBox" Style="{StaticResource DefaultTextBoxStyle}" Margin="15 0"
+                             HorizontalAlignment="Left"
+                             Height="30" VerticalContentAlignment="Center" Background="{x:Null}" Width="400"
+                             BorderThickness="2" BorderBrush="#AAAAAA" />
+                    <TextBox x:Name="CalcPolValueTextBox" Style="{StaticResource DefaultTextBoxStyle}"
+                             Margin="455 0 0 0" HorizontalAlignment="Left"
+                             Height="30" VerticalContentAlignment="Center" Background="{x:Null}" Width="225"
+                             BorderThickness="2" BorderBrush="#AAAAAA" />
+                    <Button Click="CalcStringButtonClick" Style="{StaticResource DefaultButtonStyle}"
+                            HorizontalAlignment="Right" Margin="0 0 30 0"
+                            FontSize="16" BorderThickness="2" BorderBrush="#074EE8" Foreground="#074EE8" Width="116"
+                            Content="Вычислить" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+        <!--Полином в строку-->
+        <Grid x:Name="Grid1" Visibility="Collapsed">
+            <StackPanel>
+                <Grid Height="21" Margin="0 15 0 0">
+                    <Label Margin="10 0 0 0" HorizontalAlignment="Left" Content="Полином" Width="400"
+                           Style="{StaticResource Roboto}" Background="{x:Null}" Foreground="#767676"
+                           VerticalAlignment="Top" />
+                </Grid>
+                <Grid Height="40">
+                    <TextBox x:Name="PolToStrTextBox" Style="{StaticResource DefaultTextBoxStyle}" Margin="15 0"
+                             HorizontalAlignment="Left"
+                             Height="30" VerticalContentAlignment="Center" Background="{x:Null}" Width="625"
+                             BorderThickness="2" BorderBrush="#AAAAAA" />
+                    <Button Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" Margin="0 0 30 0"
+                            FontSize="16" BorderThickness="2" BorderBrush="#074EE8" Foreground="#074EE8" Width="148"
+                            Content="Преобразовать" Click="PolynomToStringCalculateButtonClick" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+        <!--Строку в полином-->
+        <Grid x:Name="Grid2" Visibility="Collapsed">
+            <StackPanel>
+                <Grid Height="21" Margin="0 15 0 0">
+                    <Label Margin="10 0 0 0" HorizontalAlignment="Left" Content="Строка" Width="400"
+                           Style="{StaticResource Roboto}" Background="{x:Null}" Foreground="#767676"
+                           VerticalAlignment="Top" />
+                </Grid>
+                <Grid Height="40">
+                    <TextBox Style="{StaticResource DefaultTextBoxStyle}" Margin="15 0" HorizontalAlignment="Left"
+                             Height="30" VerticalContentAlignment="Center" Background="{x:Null}" Width="625"
+                             BorderThickness="2" BorderBrush="#AAAAAA" x:Name="StrToPolTextBox" />
+                    <Button Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" Margin="0 0 30 0"
+                            FontSize="16" BorderThickness="2" BorderBrush="#074EE8" Foreground="#074EE8" Width="148"
+                            Content="Преобразовать" Click="StringToPolynomCalculateButtonClick" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+        <!--Дифференцирование полинома-->
+        <Grid x:Name="Grid3" Visibility="Collapsed">
+            <StackPanel>
+                <Grid Height="21" Margin="0 15 0 0">
+                    <Label Margin="10 0 0 0" HorizontalAlignment="Left" Content="Строка" Width="400"
+                           Style="{StaticResource Roboto}" Background="{x:Null}" Foreground="#767676"
+                           VerticalAlignment="Top" />
+                </Grid>
+                <Grid Height="40">
+                    <TextBox x:Name="DiffPolTextBox" Style="{StaticResource DefaultTextBoxStyle}" Margin="15 0"
+                             HorizontalAlignment="Left"
+                             Height="30" VerticalContentAlignment="Center" Background="{x:Null}" Width="575"
+                             BorderThickness="2" BorderBrush="#AAAAAA" />
+                    <Button Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" Margin="0 0 30 0"
+                            FontSize="16" BorderThickness="2" BorderBrush="#074EE8" Foreground="#074EE8" Width="198"
+                            Content="Дифференцировать" Click="DifferentialStringButtonClick" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+        <!--Ответ-->
+        <Grid Height="30" Margin="0 30 0 0">
+            <Label x:Name="AnswerLabel" Margin="10 0 0 0" FontSize="18" HorizontalAlignment="Left" Width="800"
+                   Style="{StaticResource Roboto}" Background="{x:Null}" Foreground="#111111" Content=""
+                   VerticalAlignment="Top" />
+        </Grid>
+    </StackPanel>
 </Window>
